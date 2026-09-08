@@ -14,12 +14,13 @@ Plain HTML, CSS, and JavaScript — no build step, no backend, no data leaves th
 
 ## Deploying
 
-This folder is ready to push to a new GitHub repo and serve with GitHub Pages
-(Settings → Pages → deploy from the `main` branch), same as the original project.
+Live at [mundusflow.github.io/electrician-business-cfo](https://mundusflow.github.io/electrician-business-cfo/),
+served from GitHub Pages (Settings → Pages → deploy from the `main` branch).
 
-## Before going live
+## The paid workbook
 
-The "Electrician Business CFO" workbook CTA (`index.html`, the `.cta` section
-and `#stickyBar`) currently points at a placeholder `mailto:you@example.com`
-link — swap that for a real signup form, waitlist link, or checkout link once
-the paid workbook and pricing exist.
+The CTA section and sticky bar link to the live Stripe Payment Link for the
+"Electrician Business CFO" workbook ($29.69 one-time). The `images/` folder
+holds the two product screenshots (Dashboard, Job Tracker), generated from a
+sample-data copy of the real workbook — also used on the Stripe product
+listing.
