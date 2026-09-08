@@ -523,6 +523,13 @@ button:hover {
   text-overflow: ellipsis;
 }
 
+.sticky-bar-price {
+  color: #D9E1F2;
+  font-size: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 .sticky-bar-button {
   flex-shrink: 0;
   display: inline-block;
@@ -546,7 +553,8 @@ button:hover {
     padding: 0 12px;
   }
 
-  .sticky-bar-subtitle {
+  .sticky-bar-subtitle,
+  .sticky-bar-price {
     display: none;
   }
 
