@@ -237,10 +237,13 @@ const num = (el) => parseFloat(el.value) || 0;
     const totalReserve = seTaxReserve + incomeTaxReserve;
     const spendable = netProfit - totalReserve;
 
+    const reserveRate = SE_TAX_BASE * SE_TAX_RATE + bracketPct / 100;
+
     resultEl.innerHTML = `
       <div class="result-box">
-        <p class="result-headline-label">Total Tax Reserve</p>
+        <p class="result-headline-label">Estimated Tax Reserve</p>
         <p class="result-headline-value result-warning">${formatMoney(totalReserve)}</p>
+        <p class="result-intro" style="margin-top:-8px;">A planning estimate, not tax advice&mdash;confirm your actual obligations with a licensed tax professional.</p>
 
         <div class="result-breakdown">
           <p class="breakdown-title">Based on:</p>
@@ -248,13 +251,13 @@ const num = (el) => parseFloat(el.value) || 0;
           <div class="breakdown-row"><span>&minus; Materials / COGS</span><span>${formatMoney(materials)}</span></div>
           <div class="breakdown-row"><span>&minus; Other expenses</span><span>${formatMoney(expenses)}</span></div>
           <div class="breakdown-row"><span>&minus; Mileage (${miles} mi &times; ${formatRate(mileageRate)})</span><span>${formatMoney(mileageDeduction)}</span></div>
-          <div class="breakdown-row breakdown-total"><span>Net profit</span><span>${formatMoney(netProfit)}</span></div>
-          <div class="breakdown-row"><span>Self-employment tax (15.3%)</span><span>${formatMoney(seTaxReserve)}</span></div>
-          <div class="breakdown-row"><span>Income tax (${bracketPct}% bracket)</span><span>${formatMoney(incomeTaxReserve)}</span></div>
-          <div class="breakdown-row breakdown-total"><span>Spendable after reserve</span><span>${formatMoney(spendable)}</span></div>
+          <div class="breakdown-row breakdown-total"><span>= Estimated business profit</span><span>${formatMoney(netProfit)}</span></div>
+          <div class="breakdown-row"><span>&times; Estimated tax reserve rate</span><span>${(reserveRate * 100).toFixed(1)}%</span></div>
+          <div class="breakdown-row breakdown-total"><span>= Suggested tax reserve</span><span>${formatMoney(totalReserve)}</span></div>
+          <div class="breakdown-row"><span>Spendable after reserve</span><span>${formatMoney(spendable)}</span></div>
         </div>
 
-        <p class="result-tip">&#128161; Move the reserve to a separate account the day you get paid&mdash;treat it as already spent.</p>
+        <p class="result-tip">&#128161; The rate is 15.3% self-employment tax plus the ${bracketPct}% income tax bracket you picked above&mdash;it doesn't know your deductions, credits, state tax, or entity type. Move the reserve to a separate account the day you get paid.</p>
       </div>
     `;
 
