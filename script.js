@@ -88,6 +88,9 @@ const num = (el) => parseFloat(el.value) || 0;
       </div>
     `;
 
+    if (typeof gtag === "function") {
+      gtag("event", "calculate_quote_click");
+    }
     showStickyBar();
   });
 })();
@@ -139,6 +142,9 @@ const num = (el) => parseFloat(el.value) || 0;
       </div>
     `;
 
+    if (typeof gtag === "function") {
+      gtag("event", "calculate_job_profit_click");
+    }
     showStickyBar();
   });
 })();
@@ -202,6 +208,9 @@ const num = (el) => parseFloat(el.value) || 0;
       </div>
     `;
 
+    if (typeof gtag === "function") {
+      gtag("event", "calculate_hourly_rate_click");
+    }
     showStickyBar();
   });
 })();
@@ -261,6 +270,9 @@ const num = (el) => parseFloat(el.value) || 0;
       </div>
     `;
 
+    if (typeof gtag === "function") {
+      gtag("event", "calculate_tax_click");
+    }
     showStickyBar();
   });
 })();
@@ -313,6 +325,9 @@ const num = (el) => parseFloat(el.value) || 0;
       </div>
     `;
 
+    if (typeof gtag === "function") {
+      gtag("event", "calculate_runway_click");
+    }
     showStickyBar();
   });
 })();
@@ -328,6 +343,9 @@ function showStickyBar() {
   if (!stickyBar || stickyBarShown) return;
   stickyBarShown = true;
   stickyBar.classList.add("visible");
+  if (typeof gtag === "function") {
+    gtag("event", "sticky_cta_shown");
+  }
 }
 
 const hero = document.querySelector(".hero");
