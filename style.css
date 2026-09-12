@@ -620,6 +620,20 @@ button:hover {
   border-radius: 4px;
 }
 
+.cta-alt-link {
+  margin: 12px 0 0 0;
+  font-size: 13px;
+}
+
+.cta-alt-link a {
+  color: #D9E1F2;
+  text-decoration: underline;
+}
+
+.cta-alt-link a:hover {
+  color: #FFFFFF;
+}
+
 .cta-button:hover {
   background-color: #E6AC00;
 }
