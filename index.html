@@ -42,11 +42,13 @@
     <div class="card" id="quote-bid">
       <h2>Quote / Bid Calculator</h2>
       <p>Build a job quote that actually covers your costs and pays you.</p>
+      <p class="privacy-note">&#128274; Runs entirely in your browser &mdash; nothing you enter is sent or stored.</p>
+      <button type="button" class="clear-link" id="q_clearBtn">Clear and enter your own numbers</button>
 
       <label for="q_materials">Materials cost</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="q_materials" placeholder="0">
+        <input type="number" id="q_materials" value="480" placeholder="0">
       </div>
 
       <label for="q_materialsMarkup">Markup on materials</label>
@@ -57,75 +59,95 @@
       </div>
 
       <label for="q_laborHours">Estimated labor hours</label>
-      <input type="number" id="q_laborHours" placeholder="0">
+      <input type="number" id="q_laborHours" value="8" placeholder="0">
 
       <label for="q_laborRate">Labor rate (per hour)</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="q_laborRate" placeholder="0">
+        <input type="number" id="q_laborRate" value="65" placeholder="0">
       </div>
 
       <label for="q_permits">Permit / inspection fees</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="q_permits" placeholder="0">
+        <input type="number" id="q_permits" value="75" placeholder="0">
       </div>
 
       <label for="q_profitMargin">Target profit margin</label>
       <p class="field-hint">Extra buffer on top of cost + labor for profit and the unexpected.</p>
       <div class="input-group input-group-suffix">
-        <input type="number" id="q_profitMargin" value="10">
+        <input type="number" id="q_profitMargin" value="30">
         <span class="input-suffix">%</span>
       </div>
 
       <button id="quoteBtn">Calculate Quote</button>
 
       <div id="quoteResult" class="result"></div>
+
+      <p class="section-divider">About This Quote / Bid Calculator</p>
+      <div class="calc-explainer">
+        <p>A bid that only adds up materials and labor is a break-even number, not a business number. This calculator builds your profit margin into the price before you ever hand the customer a number, so winning the job means actually getting paid for it.</p>
+        <p>Materials markup and labor are priced separately on purpose. Markup on materials covers the cost of sourcing, driving to the supply house, and carrying inventory risk; labor is priced on the hours the job will actually take. Bundling them into one number tends to underprice long, labor-heavy jobs like rewires and overprice quick panel swaps.</p>
+        <p>Permit and inspection fees are easy to forget when you're bidding fast between service calls, but they're real cash out of pocket before the job even starts &mdash; leaving them out of the bid means eating that cost yourself.</p>
+        <p>A frequent search among contractors is &ldquo;what should I charge for an electrical job?&rdquo; The honest framework is: real materials, real labor, permits, plus a margin that covers callbacks, code changes mid-job, and the weeks when work is slow.</p>
+      </div>
     </div>
 
     <div class="card" id="job-profit">
       <h2>Job Profit Calculator</h2>
       <p>See what a finished job actually made you, after every cost.</p>
+      <p class="privacy-note">&#128274; Runs entirely in your browser &mdash; nothing you enter is sent or stored.</p>
+      <button type="button" class="clear-link" id="jp_clearBtn">Clear and enter your own numbers</button>
 
       <label for="jp_invoiced">Amount invoiced / collected</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="jp_invoiced" placeholder="0">
+        <input type="number" id="jp_invoiced" value="2400" placeholder="0">
       </div>
 
       <label for="jp_materials">Actual materials cost</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="jp_materials" placeholder="0">
+        <input type="number" id="jp_materials" value="350" placeholder="0">
       </div>
 
       <label for="jp_labor">Actual labor cost</label>
       <p class="field-hint">Total wages/hours paid out for this job (yours and any help).</p>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="jp_labor" placeholder="0">
+        <input type="number" id="jp_labor" value="600" placeholder="0">
       </div>
 
       <label for="jp_other">Other job costs</label>
       <p class="field-hint">Permits, disposal, equipment rental, subcontractors, etc.</p>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="jp_other" placeholder="0">
+        <input type="number" id="jp_other" value="100" placeholder="0">
       </div>
 
       <button id="jobProfitBtn">Calculate Job Profit</button>
 
       <div id="jobProfitResult" class="result"></div>
+
+      <p class="section-divider">About This Job Profit Calculator</p>
+      <div class="calc-explainer">
+        <p>Getting the job done isn't the same as getting paid for your time. This calculator checks what a finished job actually returned after materials, labor, and the costs that don't make it onto the invoice.</p>
+        <p>&ldquo;Other job costs&rdquo; is where profit quietly disappears &mdash; disposal fees, equipment rental, a subcontractor brought in for a specialty task, or a permit re-inspection. Contractors who only track materials and labor consistently overestimate their real margin.</p>
+        <p>Margin percentage matters more than the dollar figure when you're comparing job types. A $1,000 profit on a $10,000 new-construction rough-in (10% margin) is a very different result from $1,000 on a $2,000 panel upgrade (50% margin) &mdash; one of those is a much better use of your crew's time.</p>
+        <p>If a job comes in under margin, compare it against the original quote from the calculator above &mdash; the gap usually points to either an underbid scope or a job that ran into unexpected complexity.</p>
+      </div>
     </div>
 
     <div class="card" id="hourly-rate">
       <h2>Hourly Rate Calculator</h2>
       <p>Work out the minimum you need to charge per billable hour.</p>
+      <p class="privacy-note">&#128274; Runs entirely in your browser &mdash; nothing you enter is sent or stored.</p>
+      <button type="button" class="clear-link" id="hr_clearBtn">Clear and enter your own numbers</button>
 
       <label for="hr_takeHome">Desired annual profit / take-home</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="hr_takeHome" placeholder="0">
+        <input type="number" id="hr_takeHome" value="75000" placeholder="0">
       </div>
 
       <p class="section-divider">Monthly overhead</p>
@@ -135,28 +157,28 @@
           <label for="hr_vehicle">Vehicle &amp; fuel</label>
           <div class="input-group">
             <span class="input-prefix">$</span>
-            <input type="number" id="hr_vehicle" placeholder="0">
+            <input type="number" id="hr_vehicle" value="800" placeholder="0">
           </div>
         </div>
         <div>
           <label for="hr_insurance">Insurance</label>
           <div class="input-group">
             <span class="input-prefix">$</span>
-            <input type="number" id="hr_insurance" placeholder="0">
+            <input type="number" id="hr_insurance" value="400" placeholder="0">
           </div>
         </div>
         <div>
           <label for="hr_tools">Tools &amp; equipment</label>
           <div class="input-group">
             <span class="input-prefix">$</span>
-            <input type="number" id="hr_tools" placeholder="0">
+            <input type="number" id="hr_tools" value="500" placeholder="0">
           </div>
         </div>
         <div>
           <label for="hr_licensing">Licensing &amp; certs</label>
           <div class="input-group">
             <span class="input-prefix">$</span>
-            <input type="number" id="hr_licensing" placeholder="0">
+            <input type="number" id="hr_licensing" value="300" placeholder="0">
           </div>
         </div>
       </div>
@@ -164,14 +186,14 @@
       <label for="hr_otherOverhead">Other overhead</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="hr_otherOverhead" placeholder="0">
+        <input type="number" id="hr_otherOverhead" value="500" placeholder="0">
       </div>
 
       <p class="section-divider">Billable time</p>
 
       <label for="hr_hoursPerWeek">Billable hours per week</label>
       <p class="field-hint">Hours actually billed to customers, not total hours worked.</p>
-      <input type="number" id="hr_hoursPerWeek" placeholder="0">
+      <input type="number" id="hr_hoursPerWeek" value="26" placeholder="0">
 
       <label for="hr_weeksPerYear">Weeks worked per year</label>
       <input type="number" id="hr_weeksPerYear" value="50">
@@ -179,32 +201,42 @@
       <button id="hourlyRateBtn">Calculate My Rate</button>
 
       <div id="hourlyRateResult" class="result"></div>
+
+      <p class="section-divider">About This Hourly Rate Calculator</p>
+      <div class="calc-explainer">
+        <p>Charging what the electrician down the road charges tells you nothing about whether your rate covers your van payment, insurance, and licensing. This calculator works backward from your real overhead to the rate you actually need.</p>
+        <p>Billable hours, not hours worked, drive this number. Drive time, estimates, paperwork, and waiting on inspections all eat into a work week without generating billable time &mdash; which is why the real minimum rate is usually higher than owners expect.</p>
+        <p>Vehicle and fuel costs, tool replacement, and licensing renewals are easy to under-budget because they're irregular rather than monthly &mdash; spreading their annual cost across your overhead here keeps them from quietly eating your margin.</p>
+        <p>This is your floor, not your rate card. Once you know the minimum, local market rates, your specialty (commercial vs. residential), and your license level determine how far above it you can reasonably price.</p>
+      </div>
     </div>
 
     <div class="card" id="tax-reserve">
       <h2>Estimated Tax Reserve</h2>
       <p>A planning estimate for what to set aside each period. Not tax advice.</p>
+      <p class="privacy-note">&#128274; Runs entirely in your browser &mdash; nothing you enter is sent or stored.</p>
+      <button type="button" class="clear-link" id="tax_clearBtn">Clear and enter your own numbers</button>
 
       <label for="tax_income">Income this period</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="tax_income" placeholder="0">
+        <input type="number" id="tax_income" value="20000" placeholder="0">
       </div>
 
       <label for="tax_materials">Materials / COGS this period</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="tax_materials" placeholder="0">
+        <input type="number" id="tax_materials" value="1500" placeholder="0">
       </div>
 
       <label for="tax_expenses">Other business expenses</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="tax_expenses" placeholder="0">
+        <input type="number" id="tax_expenses" value="470" placeholder="0">
       </div>
 
       <label for="tax_miles">Business miles driven</label>
-      <input type="number" id="tax_miles" placeholder="0">
+      <input type="number" id="tax_miles" value="20" placeholder="0">
 
       <label for="tax_mileageRate">IRS mileage rate ($/mile)</label>
       <p class="field-hint">Check irs.gov each year&mdash;this rate changes annually.</p>
@@ -227,31 +259,49 @@
       <button id="taxBtn">Calculate Tax Reserve</button>
 
       <div id="taxResult" class="result"></div>
+
+      <p class="section-divider">About This Tax Reserve Calculator</p>
+      <div class="calc-explainer">
+        <p>Self-employment tax is really two taxes stacked together &mdash; the employee and employer share of Social Security and Medicare &mdash; on top of regular income tax. This calculator breaks the two apart so the number isn't a mystery.</p>
+        <p>Vehicle mileage is one of the largest deductions available to a mobile trade like electrical work, which is why it gets its own line here instead of being buried in &ldquo;other expenses.&rdquo; Track it consistently, not just at tax time, since the IRS standard rate changes every year.</p>
+        <p>Reserving a percentage the same day you get paid &mdash; rather than waiting until the quarter ends &mdash; turns a big tax bill into a non-event, because the money was never treated as spendable in the first place.</p>
+        <p>This tool is a planning estimate, not a filed return. Entity type (sole prop vs. S-corp), state tax, and deductions all change your real number &mdash; confirm with a licensed tax professional before you rely on it.</p>
+      </div>
     </div>
 
     <div class="card" id="business-runway">
       <h2>Business Runway Calculator</h2>
       <p>See how many months your savings would cover you with no income.</p>
+      <p class="privacy-note">&#128274; Runs entirely in your browser &mdash; nothing you enter is sent or stored.</p>
+      <button type="button" class="clear-link" id="runway_clearBtn">Clear and enter your own numbers</button>
 
       <label for="savings">Total current savings</label>
       <p class="field-hint">The full amount you have saved right now &mdash; not a monthly figure.</p>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="savings">
+        <input type="number" id="savings" value="18000">
       </div>
 
       <label for="monthlyExpenses">Average monthly personal expenses</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="monthlyExpenses">
+        <input type="number" id="monthlyExpenses" value="4200">
       </div>
 
       <button id="runwayBtn">Calculate Runway</button>
 
       <div id="runwayResult" class="result"></div>
+
+      <p class="section-divider">About This Business Runway Calculator</p>
+      <div class="calc-explainer">
+        <p>If the phone stopped ringing tomorrow, how long could you personally keep going? That's the question this calculator answers, using your actual savings and monthly expenses.</p>
+        <p>This is deliberately a personal number, not a business bank account number &mdash; it tells you how long you could hold steady while you drum up new work, not how long an LLC survives on paper.</p>
+        <p>Contractors with seasonal swings (storm season, new-construction cycles tied to local building activity) get the most value from running this right before their historically slower stretch, not right after a strong one.</p>
+        <p>A short runway is information, not a verdict &mdash; it's a signal to build a deliberate buffer, the same way you'd stock an extra panel before a job you know is coming.</p>
+      </div>
     </div>
 
-    <div class="cta">
+    <div class="cta" id="cta">
       <p class="cta-eyebrow">&#9889; ELECTRICIAN BUSINESS CFO</p>
       <h2>Know what to charge. Know what you made. Know what you can keep.</h2>
       <p>The free tools above answer one question at a time. The paid workbook gives you ongoing control&mdash;every job, every month, in one place.</p>
